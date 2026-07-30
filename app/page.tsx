@@ -1,0 +1,328 @@
+"use client";
+
+import { useState } from "react";
+
+const EMAIL = "woohyuk080904@gmail.com";
+
+const qualifications = [
+  { name: "ITQ 아래한글", issuer: "KPC", date: "2024.06.27" },
+  { name: "ITQ 한글엑셀", issuer: "KPC", date: "2025.07.23" },
+  { name: "ITQ 한글파워포인트", issuer: "KPC", date: "2026.07.02" },
+  { name: "정보기기운용기능사", issuer: "한국산업인력공단", date: "2026.07.10" },
+  { name: "ITQ OA Master", issuer: "KPC", date: "2026.07.23" },
+];
+
+const activities = [
+  {
+    period: "2025.09 — 현재",
+    title: "SCA 전공동아리",
+    role: "Web Security",
+    text: "교내 CTF 웹 문제 출제와 운영, 보안 특강 및 팀 기반 웹 서비스 모의해킹 활동에 참여하고 있습니다.",
+    tags: ["CTF 운영", "Web", "Security"],
+  },
+  {
+    period: "2025.11 — 현재",
+    title: "Team KTS",
+    role: "CTF Team",
+    text: "CTF 웹 분야 문제를 분석하고 풀이 과정과 취약점 원리를 기록합니다.",
+    tags: ["CTF", "Write-up"],
+  },
+  {
+    period: "2026.07 — 현재",
+    title: "Team Dangel Donut",
+    role: "CTF Team",
+    text: "웹 분야를 중심으로 대회 문제 분석과 팀 풀이에 참여하고 있습니다.",
+    tags: ["Web", "Team"],
+  },
+  {
+    period: "2024.11 — 현재",
+    title: "Dreamhack · W0_hyuk",
+    role: "Security Learning",
+    text: "웹 해킹 문제를 풀며 XSS, 인증, 접근 제어 등 웹 취약점의 발생 원인과 익스플로잇 흐름을 학습합니다.",
+    tags: ["Dreamhack", "Web Hacking"],
+  },
+];
+
+const trackRecord = [
+  {
+    year: "2025",
+    title: "사이버가디언즈 CTF",
+    result: "본선 진출",
+    description: "웹 분야 문제 분석 및 팀 풀이 참여",
+  },
+  {
+    year: "2025",
+    title: "HSPACE Club League CTF",
+    result: "본선 진출",
+    description: "온라인 예선을 거쳐 본선 참가",
+  },
+  {
+    year: "2024",
+    title: "교내 학과 CTF",
+    result: "우수상",
+    description: "웹·보안 문제 해결 역량 기반 수상",
+  },
+];
+
+const education = [
+  {
+    period: "2026.06 — 2026.11",
+    title: "현대오토에버 화이트해커 양성교육",
+    status: "참여 중",
+    text: "차세대 보안 인재 양성을 위한 실무 중심 보안 교육 과정",
+  },
+  {
+    period: "2026.07.22 — 07.30",
+    title: "헌팅주니어 1기",
+    status: "교육",
+    text: "보안 위협 탐지와 분석 역량 강화를 위한 교육 프로그램",
+  },
+];
+
+const caseStudies = [
+  {
+    index: "01",
+    title: "SCA Web CTF Challenge",
+    eyebrow: "CHALLENGE DESIGN",
+    text: "웹 해킹 입문 문제를 설계하고 의도된 풀이, 우회 가능성, 참가자 질의응답 흐름을 검증한 동아리 프로젝트입니다.",
+    role: "문제 설계 · 구현 · 풀이 검증 · 운영",
+    stack: ["PHP", "JavaScript", "SQL", "Docker"],
+    state: "자료 정리 중",
+  },
+  {
+    index: "02",
+    title: "Timeticket Security Review",
+    eyebrow: "TEAM SECURITY ACTIVITY",
+    text: "SCA 팀 활동으로 진행된 웹 서비스 점검에서 입력 지점을 분석해 XSS 취약점 1건을 식별했습니다.",
+    role: "XSS 테스트 및 발견 내용 정리",
+    stack: ["XSS", "Burp Suite", "Web"],
+    state: "공개 범위 검토 중",
+  },
+  {
+    index: "03",
+    title: "Web Security Write-ups",
+    eyebrow: "RESEARCH ARCHIVE",
+    text: "CTF와 Dreamhack 웹 문제를 풀며 취약점 원인, 실패한 접근, 최종 공격 흐름을 Tistory에 기록하고 있습니다.",
+    role: "분석 · 익스플로잇 · 기술 문서 작성",
+    stack: ["XSS", "OAuth", "LFI", "Cookie"],
+    state: "379+ posts",
+    href: "https://wohyuk.tistory.com/",
+  },
+];
+
+export default function Home() {
+  const [copied, setCopied] = useState(false);
+
+  async function copyEmail() {
+    await navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  }
+
+  return (
+    <main>
+      <nav className="nav-shell" aria-label="주요 메뉴">
+        <a className="brand mono" href="#top" aria-label="처음으로">
+          CWH<span>_SEC</span>
+        </a>
+        <div className="nav-links">
+          <a href="#about">About</a>
+          <a href="#activities">Activities</a>
+          <a href="#record">Record</a>
+          <a href="#projects">Projects</a>
+        </div>
+        <button className="copy-button mono" onClick={copyEmail}>
+          {copied ? "COPIED" : "COPY EMAIL"}
+        </button>
+      </nav>
+
+      <header className="hero section" id="top">
+        <div className="hero-status mono">
+          <span className="status-dot" />
+          SYSTEMS ONLINE // WEB SECURITY STUDENT
+        </div>
+        <p className="hero-kicker mono">CHAE</p>
+        <h1>
+          WOO<span>HYUK</span>
+        </h1>
+        <div className="hero-bottom">
+          <p>
+            웹 애플리케이션 보안과 취약점 분석을 공부하며,
+            <br />
+            문제의 정답보다 <strong>취약점이 발생한 원인과 공격 흐름</strong>을 기록합니다.
+          </p>
+          <div className="hero-actions">
+            <a className="button primary" href="#projects">프로젝트 보기</a>
+            <a className="button" href="https://wohyuk.tistory.com/" target="_blank" rel="noreferrer">
+              Tistory ↗
+            </a>
+          </div>
+        </div>
+        <div className="scroll-cue mono">SCROLL TO EXPLORE <span>↓</span></div>
+      </header>
+
+      <section className="section about-grid" id="about">
+        <div>
+          <p className="section-index mono">/ 01 — IDENTITY</p>
+          <h2>About</h2>
+        </div>
+        <div className="about-copy">
+          <p className="lead">
+            안녕하세요. 웹 보안과 CTF를 중심으로 성장하고 있는
+            <strong> 채우혁</strong>입니다.
+          </p>
+          <p>
+            세명컴퓨터고등학교 스마트보안솔루션과에 재학 중이며, 동아리 활동과
+            보안 교육을 통해 웹 문제 출제·운영, 취약점 분석, Write-up 작성을
+            경험하고 있습니다. 분석 결과만 나열하기보다 어떤 관찰에서 가설을
+            세웠고, 왜 해당 공격이 가능했는지 설명하는 것을 중요하게 생각합니다.
+          </p>
+          <dl className="identity-list mono">
+            <div><dt>FOCUS</dt><dd>WEB SECURITY / CTF</dd></div>
+            <div><dt>BASED IN</dt><dd>SEOUL, KR</dd></div>
+            <div><dt>STATUS</dt><dd>OPEN TO LEARNING</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section className="section" id="activities">
+        <div className="section-heading">
+          <div>
+            <p className="section-index mono">/ 02 — FIELD NOTES</p>
+            <h2>Activities</h2>
+          </div>
+          <p>동아리, 팀, 학습 활동을 역할과 기여 중심으로 정리했습니다.</p>
+        </div>
+        <div className="activity-list">
+          {activities.map((item) => (
+            <article className="activity-row" key={item.title}>
+              <p className="period mono">{item.period}</p>
+              <div>
+                <p className="eyebrow mono">{item.role}</p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+              <div className="tags">
+                {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section record-section" id="record">
+        <div className="section-heading">
+          <div>
+            <p className="section-index mono">/ 03 — TRACK RECORD</p>
+            <h2>Awards & Education</h2>
+          </div>
+        </div>
+        <div className="record-layout">
+          <div>
+            <h3 className="column-title mono">COMPETITIONS</h3>
+            {trackRecord.map((item) => (
+              <article className="record-card" key={item.title}>
+                <span className="year mono">{item.year}</span>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </div>
+                <strong>{item.result}</strong>
+              </article>
+            ))}
+          </div>
+          <div>
+            <h3 className="column-title mono">TRAINING PROGRAMS</h3>
+            {education.map((item) => (
+              <article className="training-card" key={item.title}>
+                <p className="period mono">{item.period}</p>
+                <div className="card-line">
+                  <h4>{item.title}</h4>
+                  <span>{item.status}</span>
+                </div>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section qualification-section">
+        <div className="section-heading compact">
+          <div>
+            <p className="section-index mono">/ 04 — LICENSES</p>
+            <h2>Qualifications</h2>
+          </div>
+        </div>
+        <div className="qualification-grid">
+          {qualifications.map((item, index) => (
+            <article key={item.name}>
+              <span className="number mono">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.name}</h3>
+              <p>{item.issuer}</p>
+              <time className="mono">{item.date}</time>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" id="projects">
+        <div className="section-heading">
+          <div>
+            <p className="section-index mono">/ 05 — SELECTED WORK</p>
+            <h2>Security Projects</h2>
+          </div>
+          <p>공개 가능한 범위에서 역할과 결과를 정확히 표현했습니다.</p>
+        </div>
+        <div className="project-list">
+          {caseStudies.map((project) => (
+            <article className="project-card" key={project.title}>
+              <div className="project-number mono">{project.index}</div>
+              <div className="project-body">
+                <p className="eyebrow mono">{project.eyebrow}</p>
+                <h3>{project.title}</h3>
+                <p>{project.text}</p>
+                <dl>
+                  <div><dt>MY ROLE</dt><dd>{project.role}</dd></div>
+                  <div><dt>STACK</dt><dd>{project.stack.join(" · ")}</dd></div>
+                </dl>
+              </div>
+              <div className="project-meta">
+                <span className="mono">{project.state}</span>
+                {project.href ? (
+                  <a href={project.href} target="_blank" rel="noreferrer">VIEW ARCHIVE ↗</a>
+                ) : (
+                  <span className="muted">DETAILS SOON</span>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section skill-section">
+        <p className="section-index mono">/ 06 — TOOLBOX</p>
+        <h2>Working Knowledge</h2>
+        <div className="skill-grid">
+          <div><h3>Web Security</h3><p>XSS · SQL Injection · Authentication · Access Control · File Handling</p></div>
+          <div><h3>Tools</h3><p>Burp Suite · Linux · Wireshark · Git · Docker</p></div>
+          <div><h3>Development</h3><p>HTML · CSS · JavaScript · PHP · Python · SQL</p></div>
+        </div>
+      </section>
+
+      <footer className="section contact">
+        <p className="section-index mono">/ 07 — CONTACT</p>
+        <h2>Let&apos;s build something<br /><span>secure.</span></h2>
+        <div className="contact-row">
+          <button onClick={copyEmail}>{copied ? "이메일이 복사되었습니다." : EMAIL}</button>
+          <a href="https://wohyuk.tistory.com/" target="_blank" rel="noreferrer">Tistory ↗</a>
+          <a href="https://dreamhack.io/users/39619" target="_blank" rel="noreferrer">Dreamhack ↗</a>
+        </div>
+        <div className="footer-line mono">
+          <span>© 2026 CHAE WOOHYUK</span>
+          <span>WEB SECURITY STUDENT</span>
+        </div>
+      </footer>
+    </main>
+  );
+}
