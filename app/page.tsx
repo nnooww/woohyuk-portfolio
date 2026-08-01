@@ -22,14 +22,14 @@ const activities = [
   },
   {
     period: "2025.11 — 현재",
-    title: "CTF Team — KTS · Dangel Donut",
+    title: "CTF Team — KTS, Dangel Donut",
     role: "CTF Team",
     text: "KTS와 Dangel Donut 소속으로 CTF에 참가해 웹 분야 문제를 분석하고, 풀이 과정과 취약점 원리를 기록하고 있습니다.",
     tags: ["KTS", "Dangel Donut", "Web"],
   },
   {
     period: "2024.11 — 현재",
-    title: "Dreamhack · W0_hyuk",
+    title: "Dreamhack — W0_hyuk",
     role: "Security Learning",
     text: "Dreamhack에서 웹 해킹 문제를 풀고, 풀이 과정과 새로 알게 된 내용을 Tistory에 기록하고 있습니다.",
     tags: ["Dreamhack", "Web Hacking"],
@@ -41,14 +41,14 @@ const trackRecord = [
     year: "2026",
     title: "Hack The Box Cyber Apocalypse CTF 2026",
     result: "팀 전체 4위",
-    description: "Dangel Donut 소속 참가 · 6,744팀 중 4위 · 136/136 challenges solved",
+    description: "Dangel Donut 소속으로 참가해 6,744팀 중 4위, 136개 문제 전체 풀이",
     evidence: "htb-cyber-apocalypse-2026.png",
   },
   {
     year: "2025",
     title: "사이버가디언즈 CTF",
-    result: "장려상 · 6위",
-    description: "예선: 포너블 담당 지피티 · 6위 본선 진출 / 본선: 포너블 담당 지피티 · 6위 장려상",
+    result: "장려상, 6위",
+    description: "포너블을 담당한 팀 지피티로 예선 6위 본선 진출, 본선 6위 장려상 수상",
     evidence: "cyber-guardians-2025-award.png",
   },
   {
@@ -84,8 +84,8 @@ const caseStudies = [
   {
     index: "01",
     title: "SCA CTF Blackbox Challenge — CAT Market",
-    text: "SCA CTF에서 운영한 블랙박스 웹 문제 CAT Market을 설계·구현하고, 의도된 풀이 검증과 참가자 티켓 문의 대응을 맡았습니다.",
-    role: "문제 설계 · 구현 · 풀이 검증 · 문제 티켓 문의 해결",
+    text: "SCA CTF에서 운영한 블랙박스 웹 문제 CAT Market을 설계 및 구현하고, 의도된 풀이 검증과 참가자 티켓 문의 대응을 맡았습니다.",
+    role: "문제 설계 및 구현, 풀이 검증, 문제 티켓 문의 해결",
     state: "자료 정리 중",
   },
   {
@@ -100,7 +100,7 @@ const caseStudies = [
     index: "03",
     title: "Web Security Write-ups",
     text: "CTF와 Dreamhack 웹 문제를 풀며 취약점 원인, 실패한 접근, 최종 공격 흐름을 Tistory에 기록하고 있습니다.",
-    role: "분석 · 익스플로잇 · 기술 문서 작성",
+    role: "문제 분석, 익스플로잇, 기술 문서 작성",
     state: "379+ posts",
     href: "https://wohyuk.tistory.com/",
   },
@@ -135,7 +135,7 @@ export default function Home() {
       <header className="hero section" id="top">
         <div className="hero-status mono">
           <span className="status-dot" />
-          WEB SECURITY · CTF · WRITE-UPS
+          WEB SECURITY / CTF / WRITE-UPS
         </div>
         <p className="hero-kicker mono">CHAE</p>
         <h1>
@@ -277,7 +277,7 @@ export default function Home() {
                 <p>{project.text}</p>
                 <dl>
                   <div><dt>MY ROLE</dt><dd>{project.role}</dd></div>
-                  {project.stack ? <div><dt>STACK</dt><dd>{project.stack.join(" · ")}</dd></div> : null}
+                  {project.stack ? <div><dt>STACK</dt><dd>{project.stack.join(", ")}</dd></div> : null}
                 </dl>
               </div>
               <div className="project-meta">
@@ -294,16 +294,16 @@ export default function Home() {
       </section>
 
       <section className="section skill-section">
-        <h2>Working Knowledge</h2>
+        <h2>Skills</h2>
         <div className="skill-grid">
-          <div><h3>Web Security</h3><p>XSS · SQL Injection · Authentication · Access Control · File Handling</p></div>
-          <div><h3>Tools</h3><p>Burp Suite · Linux · Wireshark · Git · Docker</p></div>
-          <div><h3>Development</h3><p>HTML · CSS · JavaScript · PHP · Python · SQL</p></div>
+          <div><h3>Web Hacking</h3><p>XSS, SQL Injection, CSRF, SSRF, SSTI, File Upload, Authentication, Access Control, LFI, Command Injection</p></div>
+          <div><h3>Tools</h3><p>Burp Suite, Nmap, Wireshark, Linux, Git, Docker</p></div>
+          <div><h3>Languages</h3><p>Python, HTML, CSS, JavaScript, SQL, Java, JSP, PHP</p></div>
         </div>
       </section>
 
       <footer className="section contact">
-        <h2>Let&apos;s build something<br /><span>secure.</span></h2>
+        <h2>궁금한 점이 있다면<br /><span>연락해주세요.</span></h2>
         <div className="contact-row">
           <button onClick={copyEmail}>{copied ? "이메일이 복사되었습니다." : EMAIL}</button>
           <a href="https://wohyuk.tistory.com/" target="_blank" rel="noreferrer">Tistory ↗</a>
