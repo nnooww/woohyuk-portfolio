@@ -83,17 +83,14 @@ const education = [
 const caseStudies = [
   {
     index: "01",
-    title: "SCA Web CTF Challenge",
-    eyebrow: "CHALLENGE DESIGN",
-    text: "웹 해킹 입문 문제를 설계하고 의도된 풀이, 우회 가능성, 참가자 질의응답 흐름을 검증한 동아리 프로젝트입니다.",
-    role: "문제 설계 · 구현 · 풀이 검증 · 운영",
-    stack: ["PHP", "JavaScript", "SQL", "Docker"],
+    title: "SCA CTF Blackbox Challenge — CAT Market",
+    text: "SCA CTF에서 운영한 블랙박스 웹 문제 CAT Market을 설계·구현하고, 의도된 풀이 검증과 참가자 티켓 문의 대응을 맡았습니다.",
+    role: "문제 설계 · 구현 · 풀이 검증 · 문제 티켓 문의 해결",
     state: "자료 정리 중",
   },
   {
     index: "02",
     title: "Timeticket Security Review",
-    eyebrow: "TEAM SECURITY ACTIVITY",
     text: "SCA 팀 활동으로 진행된 웹 서비스 점검에서 입력 지점을 분석해 XSS 취약점 1건을 식별했습니다.",
     role: "XSS 테스트 및 발견 내용 정리",
     stack: ["XSS", "Burp Suite", "Web"],
@@ -102,10 +99,8 @@ const caseStudies = [
   {
     index: "03",
     title: "Web Security Write-ups",
-    eyebrow: "RESEARCH ARCHIVE",
     text: "CTF와 Dreamhack 웹 문제를 풀며 취약점 원인, 실패한 접근, 최종 공격 흐름을 Tistory에 기록하고 있습니다.",
     role: "분석 · 익스플로잇 · 기술 문서 작성",
-    stack: ["XSS", "OAuth", "LFI", "Cookie"],
     state: "379+ posts",
     href: "https://wohyuk.tistory.com/",
   },
@@ -272,19 +267,17 @@ export default function Home() {
           <div>
             <h2>Security Projects</h2>
           </div>
-          <p>공개 가능한 범위에서 역할과 결과를 정확히 표현했습니다.</p>
         </div>
         <div className="project-list">
           {caseStudies.map((project) => (
             <article className="project-card" key={project.title}>
               <div className="project-number mono">{project.index}</div>
               <div className="project-body">
-                <p className="eyebrow mono">{project.eyebrow}</p>
                 <h3>{project.title}</h3>
                 <p>{project.text}</p>
                 <dl>
                   <div><dt>MY ROLE</dt><dd>{project.role}</dd></div>
-                  <div><dt>STACK</dt><dd>{project.stack.join(" · ")}</dd></div>
+                  {project.stack ? <div><dt>STACK</dt><dd>{project.stack.join(" · ")}</dd></div> : null}
                 </dl>
               </div>
               <div className="project-meta">
