@@ -22,17 +22,10 @@ const activities = [
   },
   {
     period: "2025.11 — 현재",
-    title: "Team KTS",
+    title: "CTF Team — KTS · Dangel Donut",
     role: "CTF Team",
-    text: "CTF 웹 분야 문제를 분석하고 풀이 과정과 취약점 원리를 기록합니다.",
-    tags: ["CTF", "Write-up"],
-  },
-  {
-    period: "2026.07 — 현재",
-    title: "Team Dangel Donut",
-    role: "CTF Team",
-    text: "웹 분야를 중심으로 대회 문제 분석과 팀 풀이에 참여하고 있습니다.",
-    tags: ["Web", "Team"],
+    text: "KTS와 Dangel Donut 소속으로 CTF에 참가해 웹 분야 문제를 분석하고, 풀이 과정과 취약점 원리를 기록하고 있습니다.",
+    tags: ["KTS", "Dangel Donut", "Web"],
   },
   {
     period: "2024.11 — 현재",
@@ -44,6 +37,12 @@ const activities = [
 ];
 
 const trackRecord = [
+  {
+    year: "2026",
+    title: "Hack The Box Cyber Apocalypse CTF 2026",
+    result: "팀 전체 4위",
+    description: "Dangel Donut 소속 참가 · 6,744팀 중 4위 · 136/136 challenges solved",
+  },
   {
     year: "2025",
     title: "사이버가디언즈 CTF",
