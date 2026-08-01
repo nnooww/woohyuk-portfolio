@@ -39,6 +39,13 @@ const activities = [
 const trackRecord = [
   {
     year: "2026",
+    title: "Athena CTF 2026",
+    result: "전체 4위",
+    description: "2인 팀 SLHR로 참가해 500팀 이상 중 전체 4위",
+    evidence: "athena-ctf-2026-rank-4.png",
+  },
+  {
+    year: "2026",
     title: "Hack The Box Cyber Apocalypse CTF 2026",
     result: "팀 전체 4위",
     description: "Dangel Donut 소속으로 참가해 6,744팀 중 4위, 136개 문제 전체 풀이",
