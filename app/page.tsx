@@ -48,7 +48,7 @@ const trackRecord = [
     year: "2025",
     title: "사이버가디언즈 CTF",
     result: "장려상 · 6위",
-    description: "예선 팀 ‘포너블 담당 지피티’ 6위 본선 진출 · 본선 6위 장려상",
+    description: "예선: 포너블 담당 지피티 · 6위 본선 진출 / 본선: 포너블 담당 지피티 · 6위 장려상",
     evidence: "cyber-guardians-2025-award.png",
   },
   {
