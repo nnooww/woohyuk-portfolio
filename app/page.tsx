@@ -139,7 +139,7 @@ export default function Home() {
       <header className="hero section" id="top">
         <div className="hero-status mono">
           <span className="status-dot" />
-          SYSTEMS ONLINE // WEB SECURITY STUDENT
+          WEB SECURITY · CTF · WRITE-UPS
         </div>
         <p className="hero-kicker mono">CHAE</p>
         <h1>
@@ -147,9 +147,9 @@ export default function Home() {
         </h1>
         <div className="hero-bottom">
           <p>
-            웹 애플리케이션 보안과 취약점 분석을 공부하며,
+            웹 보안을 공부하며 CTF와 웹 취약점 분석 활동을 이어가고 있습니다.
             <br />
-            문제의 정답보다 <strong>취약점이 발생한 원인과 공격 흐름</strong>을 기록합니다.
+            문제를 해결하는 데서 끝내지 않고, <strong>풀이 과정과 새롭게 알게 된 내용</strong>을 기록합니다.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#projects">프로젝트 보기</a>
@@ -172,10 +172,10 @@ export default function Home() {
             <strong> 채우혁</strong>입니다.
           </p>
           <p>
-            세명컴퓨터고등학교 스마트보안솔루션과에 재학 중이며, 동아리 활동과
-            보안 교육을 통해 웹 문제 출제·운영, 취약점 분석, Write-up 작성을
-            경험하고 있습니다. 분석 결과만 나열하기보다 어떤 관찰에서 가설을
-            세웠고, 왜 해당 공격이 가능했는지 설명하는 것을 중요하게 생각합니다.
+            현재 세명컴퓨터고등학교 스마트보안솔루션과에 재학 중이며,
+            전공동아리와 보안 교육 등 다양한 활동에 참여하며 경험을 쌓고 있습니다.
+            CTF와 워게임 문제를 풀 때는 플래그만 기록하기보다, 풀이 과정에서
+            어떤 점을 관찰했고 이를 바탕으로 어떻게 접근했는지 정리하려고 합니다.
           </p>
           <dl className="identity-list mono">
             <div><dt>FOCUS</dt><dd>WEB SECURITY / CTF</dd></div>
