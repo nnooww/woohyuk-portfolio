@@ -42,12 +42,14 @@ const trackRecord = [
     title: "Hack The Box Cyber Apocalypse CTF 2026",
     result: "팀 전체 4위",
     description: "Dangel Donut 소속 참가 · 6,744팀 중 4위 · 136/136 challenges solved",
+    evidence: "htb-cyber-apocalypse-2026.png",
   },
   {
     year: "2025",
     title: "사이버가디언즈 CTF",
-    result: "본선 진출",
-    description: "웹 분야 문제 분석 및 팀 풀이 참여",
+    result: "장려상 · 6위",
+    description: "예선 팀 ‘포너블 담당 지피티’ 6위 본선 진출 · 본선 6위 장려상",
+    evidence: "cyber-guardians-2025-award.png",
   },
   {
     year: "2025",
@@ -66,15 +68,15 @@ const trackRecord = [
 const education = [
   {
     period: "2026.06 — 2026.11",
-    title: "현대오토에버 화이트해커 양성교육",
+    title: "현대오토에버 화이트해커 양성교육 10기",
     status: "참여 중",
-    text: "차세대 보안 인재 양성을 위한 실무 중심 보안 교육 과정",
+    text: "정보보안 이론과 웹·네트워크 해킹을 학습하고 화이트해커 경진대회에 참여하는 교육 과정",
   },
   {
     period: "2026.07.22 — 07.30",
     title: "헌팅주니어 1기",
     status: "교육",
-    text: "보안 위협 탐지와 분석 역량 강화를 위한 교육 프로그램",
+    text: "실전 버그바운티를 포함한 웹 해킹 과정 교육",
   },
 ];
 
@@ -162,7 +164,6 @@ export default function Home() {
 
       <section className="section about-grid" id="about">
         <div>
-          <p className="section-index mono">/ 01 — IDENTITY</p>
           <h2>About</h2>
         </div>
         <div className="about-copy">
@@ -187,7 +188,6 @@ export default function Home() {
       <section className="section" id="activities">
         <div className="section-heading">
           <div>
-            <p className="section-index mono">/ 02 — FIELD NOTES</p>
             <h2>Activities</h2>
           </div>
         </div>
@@ -211,23 +211,27 @@ export default function Home() {
       <section className="section record-section" id="record">
         <div className="section-heading">
           <div>
-            <p className="section-index mono">/ 03 — TRACK RECORD</p>
             <h2>Awards & Education</h2>
           </div>
         </div>
         <div className="record-layout">
           <div>
             <h3 className="column-title mono">COMPETITIONS</h3>
-            {trackRecord.map((item) => (
-              <article className="record-card" key={item.title}>
+            {trackRecord.map((item) => {
+              const content = <>
                 <span className="year mono">{item.year}</span>
                 <div>
                   <h4>{item.title}</h4>
                   <p>{item.description}</p>
                 </div>
                 <strong>{item.result}</strong>
-              </article>
-            ))}
+              </>;
+              return item.evidence ? (
+                <a className="record-card evidence-card" href={item.evidence} target="_blank" rel="noreferrer" key={item.title} aria-label={`${item.title} 증빙 이미지 보기`}>
+                  {content}
+                </a>
+              ) : <article className="record-card" key={item.title}>{content}</article>;
+            })}
           </div>
           <div>
             <h3 className="column-title mono">TRAINING PROGRAMS</h3>
@@ -248,7 +252,6 @@ export default function Home() {
       <section className="section qualification-section">
         <div className="section-heading compact">
           <div>
-            <p className="section-index mono">/ 04 — LICENSES</p>
             <h2>Qualifications</h2>
           </div>
         </div>
@@ -267,7 +270,6 @@ export default function Home() {
       <section className="section" id="projects">
         <div className="section-heading">
           <div>
-            <p className="section-index mono">/ 05 — SELECTED WORK</p>
             <h2>Security Projects</h2>
           </div>
           <p>공개 가능한 범위에서 역할과 결과를 정확히 표현했습니다.</p>
@@ -299,7 +301,6 @@ export default function Home() {
       </section>
 
       <section className="section skill-section">
-        <p className="section-index mono">/ 06 — TOOLBOX</p>
         <h2>Working Knowledge</h2>
         <div className="skill-grid">
           <div><h3>Web Security</h3><p>XSS · SQL Injection · Authentication · Access Control · File Handling</p></div>
@@ -309,7 +310,6 @@ export default function Home() {
       </section>
 
       <footer className="section contact">
-        <p className="section-index mono">/ 07 — CONTACT</p>
         <h2>Let&apos;s build something<br /><span>secure.</span></h2>
         <div className="contact-row">
           <button onClick={copyEmail}>{copied ? "이메일이 복사되었습니다." : EMAIL}</button>
