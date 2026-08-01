@@ -31,7 +31,7 @@ const activities = [
     period: "2024.11 — 현재",
     title: "Dreamhack · W0_hyuk",
     role: "Security Learning",
-    text: "Dreamhack 워게임과 CTF 문제를 풀고, 막혔던 부분과 풀이 과정을 Tistory에 정리하고 있습니다.",
+    text: "Dreamhack에서 웹 해킹 문제를 풀고, 풀이 과정과 새로 알게 된 내용을 Tistory에 기록하고 있습니다.",
     tags: ["Dreamhack", "Web Hacking"],
   },
 ];
