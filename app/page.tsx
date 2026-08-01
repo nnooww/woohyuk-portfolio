@@ -31,7 +31,7 @@ const activities = [
     period: "2024.11 — 현재",
     title: "Dreamhack · W0_hyuk",
     role: "Security Learning",
-    text: "웹 해킹 문제를 풀며 XSS, 인증, 접근 제어 등 웹 취약점의 발생 원인과 익스플로잇 흐름을 학습합니다.",
+    text: "Dreamhack 워게임과 CTF 문제를 풀고, 막혔던 부분과 풀이 과정을 Tistory에 정리하고 있습니다.",
     tags: ["Dreamhack", "Web Hacking"],
   },
 ];
@@ -190,7 +190,6 @@ export default function Home() {
             <p className="section-index mono">/ 02 — FIELD NOTES</p>
             <h2>Activities</h2>
           </div>
-          <p>동아리, 팀, 학습 활동을 역할과 기여 중심으로 정리했습니다.</p>
         </div>
         <div className="activity-list">
           {activities.map((item) => (
