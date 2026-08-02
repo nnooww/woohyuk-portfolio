@@ -74,8 +74,9 @@ const trackRecord = [
   {
     year: "2024",
     title: "교내 학과 CTF",
-    result: "우수상",
-    description: "웹·보안 문제 해결 역량 기반 수상",
+    result: "우수상, 4위",
+    description: "미래인재 정보보안 챌린지 개인전에서 학과 내 4위로 우수상 수상",
+    evidence: "school-ctf-2024-award.png",
   },
 ];
 
