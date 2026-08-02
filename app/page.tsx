@@ -39,6 +39,13 @@ const activities = [
 const trackRecord = [
   {
     year: "2026",
+    title: "BushBash CTF 2026",
+    result: "전체 16위",
+    description: "SLHR로 참가해 1,063개 등록 팀 중 전체 16위, 상위 약 1.5%",
+    evidence: "bushbash-ctf-2026-result.png",
+  },
+  {
+    year: "2026",
     title: "Athena CTF 2026",
     result: "전체 4위",
     description: "2인 팀 SLHR로 참가해 500팀 이상 중 전체 4위",
